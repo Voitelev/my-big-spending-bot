@@ -18,18 +18,19 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void create(User user) {
-
-    }
-
-    @Override
     public void update(User user) {
 
     }
 
     @Override
     @Transactional
-    public User getUser(Long chatId) {
+    public User getUser(Integer chatId) {
         return userDao.getUser(chatId);
+    }
+
+    @Override
+    @Transactional
+    public void createUser(User user) {
+        userDao.create(user);
     }
 }
