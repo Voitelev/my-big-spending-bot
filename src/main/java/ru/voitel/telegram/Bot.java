@@ -38,15 +38,15 @@ public class Bot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         try {
             ArrayList<KeyboardRow> keyboard = new ArrayList<>();
-            KeyboardRow keyboardFirstRow = new KeyboardRow();
-            KeyboardRow keyboardSecondRow = new KeyboardRow();
-            if (update.getMessage().getText().equalsIgnoreCase("/start")) {
-                keyboardFirstRow.add("привет");
-                keyboardSecondRow.add("Hello");
-                keyboard.add(keyboardFirstRow);
-                keyboard.add(keyboardSecondRow);
-                replyKeyboardMarkup.setKeyboard(keyboard);
-            }
+            KeyboardRow keyboardOneRow = new KeyboardRow();
+            KeyboardRow keyboardTwoRow = new KeyboardRow();
+            System.out.println(update.getMessage().getMessageId());
+            keyboardOneRow.add(0,"Категории");
+            keyboardTwoRow.add(0,"Расходы");
+            keyboardTwoRow.add(1,"Профиль");
+            keyboard.add(keyboardOneRow);
+            keyboard.add(keyboardTwoRow);
+            replyKeyboardMarkup.setKeyboard(keyboard);
             SendMessage sendMessage = messageHandler.processingMessage(update.getMessage());
             sendMessage.setReplyMarkup(replyKeyboardMarkup);
             execute(sendMessage);
