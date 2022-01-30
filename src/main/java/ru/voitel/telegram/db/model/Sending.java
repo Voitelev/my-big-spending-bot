@@ -3,8 +3,9 @@ package ru.voitel.telegram.db.model;
 import org.hibernate.annotations.DynamicUpdate;
 import javax.persistence.*;
 
-@DynamicUpdate
+@Entity
 @Table(name = "SENDING")
+@DynamicUpdate
 public class Sending {
 
     @Id

@@ -4,15 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import ru.voitel.telegram.category.CategoryHandler;
 import ru.voitel.telegram.user.UserHandler;
 
 @Component
 public class MessageHandlerImpl implements MessageHandler {
 
-    @Autowired
-    private UserHandler userHandler;
+    private final UserHandler userHandler;
+    private final CategoryHandler categoryHandler;
 
-    //TODO реализовать конечный автомат
+    @Autowired
+    public MessageHandlerImpl(UserHandler userHandler, CategoryHandler categoryHandler) {
+        this.userHandler = userHandler;
+        this.categoryHandler = categoryHandler;
+    }
+
     public SendMessage processingMessage(Message message) {
         Long chatID = message.getChatId();
         SendMessage sendMessage = new SendMessage();
@@ -30,6 +36,7 @@ public class MessageHandlerImpl implements MessageHandler {
     }
 
     private void installingKeyboard() {
+
     }
 }
 

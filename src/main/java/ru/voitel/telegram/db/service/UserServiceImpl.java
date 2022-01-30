@@ -1,13 +1,13 @@
 package ru.voitel.telegram.db.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import ru.voitel.telegram.db.dao.UserDao;
 import ru.voitel.telegram.db.model.User;
 
 import javax.transaction.Transactional;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
