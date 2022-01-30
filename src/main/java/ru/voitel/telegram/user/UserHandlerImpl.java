@@ -27,7 +27,7 @@ public class UserHandlerImpl implements UserHandler {
            System.out.println("Пользователь с chatId=" + user.getId() + "не найден");
            return false;
         }
-        System.out.println("Пользователь найден " + user.name + " " + user.chatId);
+        System.out.println("Пользователь найден " + user.getUserName());
         return true;
     }
 
