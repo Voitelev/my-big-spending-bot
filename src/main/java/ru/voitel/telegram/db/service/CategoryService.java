@@ -15,5 +15,5 @@ public interface CategoryService {
      * @param userID id пользователя
      * @return список категорий пользователей
      */
-    List<Category> getUserCategories (Long userID);
+    List<Category> getUserCategories (Integer userID);
 }

@@ -4,11 +4,14 @@ package ru.voitel.telegram.state;
  * Состояние пользователя
  */
 public enum StateEnum {
-    CATEGORY("Категория", 1),
-    SENDING("Расходы", 2);
+    START("Старт", 0),
+    CATEGORY("Категории", 1),
+    SENDING("Расходы", 2),
+    ADD_CATEGORY("Добавить категорию", 3),
+    DELETE_CATEGORY("Удалить категорию", 4);
 
-    private String description;
-    private Integer code;
+    private final String description;
+    private final Integer code;
 
     StateEnum(String description, Integer code) {
         this.description = description;

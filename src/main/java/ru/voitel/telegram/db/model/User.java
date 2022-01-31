@@ -1,10 +1,15 @@
 package ru.voitel.telegram.db.model;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Column;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "USER", schema = "sending")
+@Table(name = "user", schema = "sending")
 public class User implements Serializable {
 
     @Id
@@ -16,6 +21,9 @@ public class User implements Serializable {
 
     @Column(name = "iduser")
     private Integer idUser;
+
+    @Column(name = "state_user")
+    private Integer stateUser;
 
     public int getId() {
         return id;
@@ -29,6 +37,10 @@ public class User implements Serializable {
         return idUser;
     }
 
+    public int getStateUser() {
+        return stateUser;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -39,5 +51,9 @@ public class User implements Serializable {
 
     public void setIdUser(Integer idUser) {
         this.idUser = idUser;
+    }
+
+    public void setStateUser(int stateUser) {
+        this.stateUser = stateUser;
     }
 }

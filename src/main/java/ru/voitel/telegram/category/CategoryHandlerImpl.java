@@ -32,7 +32,7 @@ public class CategoryHandlerImpl implements CategoryHandler{
      * @return все категории пользователя в одной строке
      */
     @Override
-    public String getUserCategories(Long userID) {
+    public String getUserCategories(Integer userID) {
         return parsingCategoryForOutputUser(categoryService.getUserCategories(userID));
     }
 

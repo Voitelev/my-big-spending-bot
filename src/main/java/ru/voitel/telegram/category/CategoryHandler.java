@@ -16,5 +16,5 @@ public interface CategoryHandler {
      * Получение категорий расходов пользователей
      * @param UserID id пользователя
      */
-    String getUserCategories(Long UserID);
+    String getUserCategories(Integer UserID);
 }

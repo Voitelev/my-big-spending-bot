@@ -11,7 +11,7 @@ import java.util.List;
 public class CategoryDaoIml implements CategoryDao {
 
     @Override
-    public List<Category> getUserCategories(Long userID) {
+    public List<Category> getUserCategories(Integer userID) {
         Session session = HibernateSessionFactoryUtil.getSessionFactory().openSession();
         return (List<Category>) session.createQuery("from Category where idUser = :idUser")
                 .setParameter("idUser", userID).list();

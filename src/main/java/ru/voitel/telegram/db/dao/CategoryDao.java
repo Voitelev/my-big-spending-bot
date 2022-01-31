@@ -14,5 +14,5 @@ public interface CategoryDao {
      * @param userID id пользователя
      * @return список категорий
      */
-    public List<Category> getUserCategories (Long userID);
+    public List<Category> getUserCategories (Integer userID);
 }

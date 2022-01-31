@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.voitel.telegram.db.model.User;
 import ru.voitel.telegram.db.service.UserService;
+import ru.voitel.telegram.state.StateEnum;
 
 @Component
 public class UserHandlerImpl implements UserHandler {
@@ -13,6 +14,17 @@ public class UserHandlerImpl implements UserHandler {
     @Autowired
     public UserHandlerImpl(UserService userService) {
         this.userService = userService;
+    }
+
+    /**
+     * Получение информации о пользователе из БД
+     *
+     * @param idUser id пользователя
+     * @return пользователь
+     */
+    @Override
+    public User getUser(Integer idUser) {
+        return userService.getUser(idUser);
     }
 
     /**
@@ -41,6 +53,7 @@ public class UserHandlerImpl implements UserHandler {
         User userDB = new User();
         userDB.setIdUser(user.getId());
         userDB.setName(user.getUserName());
+        userDB.setStateUser(StateEnum.START.getCode());
         userService.createUser(userDB);
     }
 }

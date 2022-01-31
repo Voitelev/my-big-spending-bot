@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
      * @return список категорий пользователей
      */
     @Override
-    public List<Category> getUserCategories(Long userID) {
+    public List<Category> getUserCategories(Integer userID) {
         return categoryDao.getUserCategories(userID);
     }
 }
