@@ -20,6 +20,7 @@ public class MessageHandlerImpl implements MessageHandler {
     private final CategoryHandler categoryHandler;
 
     private final String USER_HAVE_NO_CATEGORIES = "У вас нету категорий";
+    private final String ADD_CATEGORIES = "Добавить категорию";
 
     @Autowired
     public MessageHandlerImpl(UserHandler userHandler, CategoryHandler categoryHandler) {
@@ -46,6 +47,10 @@ public class MessageHandlerImpl implements MessageHandler {
                 }
                 sendMessage.setChatId(chatID.toString());
                 return initializationKeyboardForStateCategory(sendMessage);
+            }
+            if (message.getText().equals(StateEnum.ADD_CATEGORY.getDescription())) {
+                sendMessage.setText(ADD_CATEGORIES);
+
             }
         }
 

@@ -56,4 +56,26 @@ public class UserHandlerImpl implements UserHandler {
         userDB.setStateUser(StateEnum.START.getCode());
         userService.createUser(userDB);
     }
+
+    /**
+     * Установить состояние пользователю
+     *
+     * @param userID id пользователя
+     * @param state  состояние пользователя
+     */
+    @Override
+    public void setStateUser(Integer userID, StateEnum state) {
+
+    }
+
+    /**
+     * Получить состояние пользователя
+     *
+     * @param userID id пользователя
+     * @return состояние пользователя
+     */
+    @Override
+    public StateEnum getStateUser(Integer userID) {
+        return null;
+    }
 }
