@@ -28,6 +28,12 @@ public class MessageHandlerImpl implements MessageHandler {
         this.categoryHandler = categoryHandler;
     }
 
+    /**
+     * Обработка сообщения
+     *
+     * @param message входящее сообщение
+     * @return ответ на сообщение
+     */
     public SendMessage processingMessage(Message message) {
         Long chatID = message.getChatId();
         SendMessage sendMessage = new SendMessage();
